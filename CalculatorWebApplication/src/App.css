@@ -122,6 +122,7 @@
   gap: 8px;
   padding: 12px;
   background: var(--bg-secondary);
+  align-items: stretch; /* ensure buttons fill cells consistently */
 }
 
 .btn {

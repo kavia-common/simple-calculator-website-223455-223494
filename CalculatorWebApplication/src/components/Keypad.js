@@ -37,7 +37,7 @@ function Keypad({
 
   return (
     <div className="keypad" role="group" aria-label="Calculator keypad">
-      {/* Row: C, ÷ */}
+      {/* Row: C CE ⌫ ÷ */}
       <button
         type="button"
         className="btn btn-clear"
@@ -54,23 +54,29 @@ function Keypad({
       >
         CE
       </button>
+      {/* Keep first row to 4 items so ÷ sits in rightmost column */}
+      <span aria-hidden="true" className="btn" style={{ visibility: 'hidden' }}>•</span>
       {makeOperator('÷', '/', 'Divide')}
+
       {/* Row: 7 8 9 × */}
       {makeDigit('7')}
       {makeDigit('8')}
       {makeDigit('9')}
       {makeOperator('×', '*', 'Multiply')}
+
       {/* Row: 4 5 6 − */}
       {makeDigit('4')}
       {makeDigit('5')}
       {makeDigit('6')}
       {makeOperator('−', '-', 'Subtract')}
+
       {/* Row: 1 2 3 + */}
       {makeDigit('1')}
       {makeDigit('2')}
       {makeDigit('3')}
       {makeOperator('+', '+', 'Add')}
-      {/* Row: 0 (wide) . = */}
+
+      {/* Row: 0 (wide) . =  -> ensure = ends in rightmost column */}
       <button
         type="button"
         className="btn btn-wide"
